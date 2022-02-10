@@ -95,6 +95,8 @@ describe('GithubOpenPullRequestService', () => {
       'account',
       'repoName'
     );
-    expect(result).toStrictEqual([{ number: 1, state: 'open', numberOfCommits: 3 }]);
+    expect(result).toStrictEqual([
+      { number: 1, state: 'open', numberOfCommits: 3 },
+    ]);
   });
 });

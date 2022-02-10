@@ -35,7 +35,8 @@ export class GithubOpenPullRequestService
           pr.number
         );
         return {
-          ...pr,
+          number: pr.number,
+          state: pr.state,
           numberOfCommits: commits.length,
         };
       })

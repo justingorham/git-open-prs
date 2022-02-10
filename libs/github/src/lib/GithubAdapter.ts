@@ -30,9 +30,8 @@ export class AxiosGithubAdapter implements IGithubAdapter {
     page = 1,
     perPage = 100
   ): Promise<PullRequest[]> {
-    const { data } = await this.axios.get<PullRequest[]>(
-      `https://api.github.com/repos/${account}/${repoName}/pulls`
-    );
+    const url = `https://api.github.com/repos/${account}/${repoName}/pulls?page=${page}&per_page=${perPage}`;
+    const { data } = await this.axios.get<PullRequest[]>(url);
     if (data.length === 0) {
       return data;
     }
@@ -65,9 +64,8 @@ export class AxiosGithubAdapter implements IGithubAdapter {
     page = 1,
     perPage = 100
   ): Promise<object[]> {
-    const { data } = await this.axios.get<object[]>(
-      `https://api.github.com/repos/${account}/${repoName}/pulls/${pullRequestNumber}/commits?page=${page}&per_page=${perPage}`
-    );
+    const url = `https://api.github.com/repos/${account}/${repoName}/pulls/${pullRequestNumber}/commits?page=${page}&per_page=${perPage}`;
+    const { data } = await this.axios.get<object[]>(url);
     if (data.length === 0) {
       return data;
     }
