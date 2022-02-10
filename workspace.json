@@ -1,6 +1,7 @@
 {
   "version": 2,
   "projects": {
-    "git-open-prs-api": "apps/git-open-prs-api"
+    "git-open-prs-api": "apps/git-open-prs-api",
+    "github": "libs/github"
   }
 }
